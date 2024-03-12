@@ -10,13 +10,6 @@ function App() {
     error,
     refetch
   } = useFetch('https://jsonplaceholder.typicode.com/posts');
-
-  console.log({
-    data,
-    isLoading,
-    error,
-    refetch
-  })
 	
   return (
     <div>
