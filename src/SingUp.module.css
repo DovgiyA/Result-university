@@ -1,0 +1,9 @@
+.container {
+    position: relative;
+    padding: 25%;
+}
+
+.sex {
+    display: flex;
+    gap: 20px;
+}
