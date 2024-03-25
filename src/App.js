@@ -1,32 +1,35 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { useFetch } from './useFetch';
+import { HomePage } from './HomePage';
+import { Header } from './Header';
+import { Characters } from './Characters';
+import { Episode } from './Episode';
+import { Location } from './Location';
+import { CharacterCard } from './CharacterCard';
+import { EpisodeCard } from './EpisodeCard';
+import { LocationCard } from './LocationCard';
+import { NotFoundPage } from './NotFoundPage';
+
 
 
 
 function App() {
-  const {
-    data,
-    isLoading,
-    error,
-    refetch
-  } = useFetch('https://jsonplaceholder.typicode.com/posts');
-	
-  return (
+  
+  return( <>
     <div>
-      <div>
-        <button onClick={() => refetch({
-          params: {
-            _limit: 3
-          }
-        })}>
-          Перезапросить
-        </button>
-      </div>
-      {isLoading && 'Загрузка...'}
-      {error && 'Произошла ошибка'}
-      {data && !isLoading && data.map(item => <div key={item.id}>{item.title}</div>) }
+      <Header />
     </div>
-  );
+    <Routes>
+      <Route path='/' element={<HomePage />} />
+      <Route path='/characters' element={<Characters />} />
+      <Route path='/characters/:CharactersId' element={<CharacterCard />} />
+      <Route path='/episode' element={<Episode />} />
+      <Route path='/episode/:EpisodeId' element={<EpisodeCard />} />
+      <Route path='/location' element={<Location />} />
+      <Route path='/location/:LocationId' element={<LocationCard />} />
+      <Route path='*' element={<NotFoundPage />} />
+    </Routes>
+  </>)
 }
 
 export default App;
