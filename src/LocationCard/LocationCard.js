@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import JSONfile from './location.json';
+import JSONfile from '../Location/location.json';
 import styles from './LocationCard.module.css';
 
 export const LocationCard = () => {

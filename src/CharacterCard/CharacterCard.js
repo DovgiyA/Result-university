@@ -1,5 +1,5 @@
 import { useParams, Navigate } from "react-router-dom"
-import JSONfile from './characters.json';
+import JSONfile from '../Characters/characters.json';
 import styles from './CharacterCard.module.css';
 
 

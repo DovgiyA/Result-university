@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import JSONfile from './episode.json';
+import JSONfile from '../Episode/episode.json';
 import styles from './EpisodeCard.module.css';
 
 export const EpisodeCard = () => {

@@ -1,0 +1,79 @@
+.el {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+ border-radius: 5px;
+ border: 1px solid black;
+ font-size: small;
+}
+
+.label {
+    font-size: small;
+}
+
+.description {
+    font-size: small;
+}
+
+.icon {
+    position: absolute;
+    z-index: 10;  
+    padding: 3px;  
+}
+
+.iconInput {
+    padding-left: 20px;
+}
+
+.error {
+    color: red
+}
+
+.errorInput {
+    padding-left: 20px;
+    border: 3px solid red;
+    color: red;
+}
+
+.filled {
+    background-color: rgb(227, 211, 211);
+    border: none;
+}
+
+.unstyled {
+    border: none;
+}
+
+.xs {
+    font-size: smaller;
+}
+
+.md {
+    font-size: medium;
+}
+
+.lg {
+    font-size: large;
+}
+
+.xl {
+    font-size: larger;
+}
+
+.xsRad {
+    border-radius: 2px;
+}
+
+.mdRad {
+    border-radius: 7px;
+}
+
+.lgRad {
+    border-radius: 10px;
+}
+
+.xlRad {
+    border-radius: 13px;
+}
