@@ -3,7 +3,7 @@ import { useAuth } from '../AuthProvder.js';
 import {TextInput} from '../TextInput/TextInput.js';
 import style from './LoginPage.module.css'
 
-export const LoginPage = () => {
+const LoginPage = () => {
 
     const auth = useAuth();
     const navigate = useNavigate();
@@ -34,8 +34,10 @@ export const LoginPage = () => {
                 placeholder='Login'
                 label='Login'
                 size='xl'
-            ></TextInput>
+            />
             <button type='submit'>Submit</button>
         </form>
     )
 }
+
+export default LoginPage;

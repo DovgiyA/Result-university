@@ -1,38 +1,28 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { HomePage } from './pages/HomePage';
 import { Header } from './Header/Header';
-import { Characters } from './Characters/Characters';
-import { Episode } from './Episode/Episode';
-import { Location } from './Location/Location';
-import { CharacterCard } from './CharacterCard/CharacterCard';
-import { EpisodeCard } from './EpisodeCard/EpisodeCard';
-import { LocationCard } from './LocationCard/LocationCard';
-import { NotFoundPage } from './pages/NotFoundPage';
-import { AuthProvider } from './AuthProvder';
-import { LoginPage } from './pages/LoginPage';
+import { AuthProvider } from './AuthProvder'; 
 import { PrivateRoute } from './PrivateRoute';
+import { LazyElement } from './LazyElement/LazyElement';
 
-
-function App() {
+function App() {  
   
   return( <>
     <AuthProvider>    
       <Header /> 
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/characters' element={<PrivateRoute> <Characters /> </PrivateRoute>} />
-        <Route path='/characters/:CharactersId' element={<PrivateRoute><CharacterCard /></PrivateRoute>} />
-        <Route path='/episode' element={<PrivateRoute><Episode /></PrivateRoute>} />
-        <Route path='/episode/:EpisodeId' element={<PrivateRoute><EpisodeCard /></PrivateRoute>} />
-        <Route path='/location' element={<PrivateRoute><Location /></PrivateRoute>} />
-        <Route path='/location/:LocationId' element={<PrivateRoute><LocationCard /></PrivateRoute>} />
-        <Route path='*' element={<NotFoundPage />} />
+        <Route path='/' element={<LazyElement name='pages/HomePage' />} />
+        <Route path='/login' element={<LazyElement name='pages/LoginPage' />} />
+        <Route path='/characters' element={<PrivateRoute ><LazyElement name='Characters/Characters' /></PrivateRoute>} />
+        <Route path='/characters/:CharactersId' element={<PrivateRoute><LazyElement name='CharacterCard/CharacterCard' /></PrivateRoute>} />
+        <Route path='/episode' element={<PrivateRoute><LazyElement name='Episode/Episode' /></PrivateRoute>} />
+        <Route path='/episode/:EpisodeId' element={<PrivateRoute><LazyElement name='EpisodeCard/EpisodeCard' /></PrivateRoute>} />
+        <Route path='/location' element={<PrivateRoute><LazyElement name='Location/Location' /></PrivateRoute>} />
+        <Route path='/location/:LocationId' element={<PrivateRoute><LazyElement name='LocationCard/LocationCard' /></PrivateRoute>} />
+        <Route path='*' element={<LazyElement name='pages/NotFoundPage' />} />
       </Routes>
     </AuthProvider>
-    <Routes></Routes>
-  </>)
+     </>)
   
 }
 

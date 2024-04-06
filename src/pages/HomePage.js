@@ -1,6 +1,6 @@
 import styles from './HomePage.module.css';
 
-export const HomePage = () => {
+ const HomePage = () => {
 
     return (
         <div className={styles.home}>Рик и Мо́рти»    — американский комедийный научно-фантастический анимационный сериал для взрослых,
@@ -9,3 +9,4 @@ export const HomePage = () => {
                капризного и неуверенного в себе внука Морти. </div>
     )
 }
+export default HomePage;

@@ -1,15 +1,17 @@
 import { useParams } from "react-router-dom"
-import JSONfile from '../Episode/episode.json';
 import styles from './EpisodeCard.module.css';
+import { useAxios } from "../useAxios";
 
-export const EpisodeCard = () => {
+const EpisodeCard = () => {
 
     const {EpisodeId} = useParams();
+    const {data} = useAxios('https://rickandmortyapi.com/api/episode');
 
-    return (JSONfile[EpisodeId - 1] && <div className={styles.card}>
-        <span>{JSONfile[EpisodeId - 1].name}</span>      
-        <span>{JSONfile[EpisodeId - 1].air_date}</span>
-        <span>{JSONfile[EpisodeId - 1].episode}</span>       
+    return (data[EpisodeId - 1] && <div className={styles.card}>
+        <span>{data[EpisodeId - 1].name}</span>      
+        <span>{data[EpisodeId - 1].air_date}</span>
+        <span>{data[EpisodeId - 1].episode}</span>       
     </div>)
     
 }
+export default EpisodeCard;
